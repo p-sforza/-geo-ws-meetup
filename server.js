@@ -1,7 +1,6 @@
 var WebSocketServer = require('websocket').server;
 var http = require('http');
 var fs = require("fs");
-var countries = fs.readFileSync("countries.json");
 
 var server = http.createServer(function(request, response) {
     console.log((new Date()) + ' Received request for ' + request.url);
@@ -21,6 +20,14 @@ wsServer = new WebSocketServer({
     // to accept it.
     autoAcceptConnections: false
 });
+
+//Handle Countries
+var countries = fs.readFileSync("countries.json");
+console.log((new Date()) + ' Countries file loaded');
+function findCountryCode(alpha2) { 
+    return countries.country-code === 'US';
+}
+console.log(countries.find(findCountryCode));
 
 function originIsAllowed(origin) {
   // put logic here to detect whether the specified origin is allowed.
