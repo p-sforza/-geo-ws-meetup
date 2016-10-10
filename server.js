@@ -25,19 +25,16 @@ wsServer = new WebSocketServer({
 //Handle Countries
 //var countries = fs.readFileSync("countriesMinimal.json")
 
-var countries;
-fs.readFile('countriesMinimal.json', 'utf8', function (err, data) {
-  if (err) throw err;
-  countries = JSON.parse(data);
-});
+var countries = fs.readFileSync("countriesMinimal.json");
+var jCountries = JSON.parse(countries);
 
-console.log(util.inspect(countries, false, null))
-function findCountryCode(country) { 
-    return country.alpha2 == "ZW";
+console.log(util.inspect(jCountries, false, null))
+function findCountryCode(jCountries) { 
+    return jCountries.alpha2 == "ZW";
 }
 console.log((new Date()) + ' Countries file loaded')
-console.log((new Date()) + ' Find Res.: ' + countries.find(findCountryCode))
-console.log((new Date()) + ' Index Res.: ' + countries.indexOf("ZW"));
+console.log((new Date()) + ' Find Res.: ' + jCountries.find(findCountryCode))
+console.log((new Date()) + ' Index Res.: ' + jCountries.indexOf("ZW"));
 
 var inventory = [
                  {
