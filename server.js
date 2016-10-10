@@ -77,7 +77,7 @@ wsServer.on('request', function(request) {
 });
 
 //Web Socket Client to meetup API
-  var api_url = "ws://stream.meetup.com:443/2/rsvps/";
+  var api_url = "ws://stream.meetup.com/2/rsvps/";
   var client = new WebSocketClient();
   
   client.on('connectFailed', function(error) {
