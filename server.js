@@ -25,10 +25,10 @@ wsServer = new WebSocketServer({
 var countries = fs.readFileSync("countriesMinimal.json");
 console.log((new Date()) + ' Countries file loaded');
 function findCountryCode(alpha2) { 
-    return countries.countrycode === 'US';
+    return countries.countrycode === "ZW";
 }
 console.log(countries.find(findCountryCode));
-console.log(countries.indexOf('ZW'));
+console.log(countries.indexOf("ZW"));
 
 function originIsAllowed(origin) {
   // put logic here to detect whether the specified origin is allowed.
