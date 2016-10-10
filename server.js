@@ -99,8 +99,6 @@ wsServer.on('request', function(request) {
       });
       
   });
-var requestOptions = '{
-		options.rejectUnauthorized = false;
-}';
-client.connect(api_url, 'chat', null, null, requestOptions);
+
+client.connect(api_url, , undefined, undefined, undefined, {agent: undefined});
 
