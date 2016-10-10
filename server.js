@@ -31,9 +31,9 @@ console.log(util.inspect(jCountries, false, null));
 function findCountryCode(jCountries) { 
     return jCountries.alpha2 === "ZW";
 }
-console.log((new Date()) + ' Countries file loaded')
-console.log((new Date()) + ' Find Res.: ' + jCountries.find(findCountryCode))
-console.log((new Date()) + ' Index Res.: ' + jCountries.indexOf("ZW"));
+console.log((new Date()) + ' Countries file loaded');
+console.log((new Date()) + ' Find Res.: ' + util.inspect(jCountries.find(findCountryCode), false, null));
+//console.log((new Date()) + ' Index Res.: ' + jCountries.indexOf("ZW"));
 
 var inventory = [
                  {
