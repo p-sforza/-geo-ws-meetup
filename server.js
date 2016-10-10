@@ -100,5 +100,5 @@ wsServer.on('request', function(request) {
       
   });
    
-  client.connect(api_url, 'chat');
+  client.connect(api_url, 'HttpOnly');
 
