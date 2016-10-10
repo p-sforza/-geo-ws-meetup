@@ -24,11 +24,12 @@ wsServer = new WebSocketServer({
 
 //Handle Countries
 //var countries = fs.readFileSync("countriesMinimal.json")
+var currenCountrytAlpha2="ZW";
 var countries = fs.readFileSync("countriesMinimal.json");
 var jCountries = JSON.parse(countries);
 console.log(util.inspect(jCountries, false, null));
 function findCountryCode(jCountries) { 
-    return jCountries.alpha2 === "ZW";
+    return jCountries.alpha2 === currenCountrytAlpha2;
 };
 console.log((new Date()) + ' Countries file loaded');
 console.log((new Date()) + ' Find Res.: ' + util.inspect(jCountries.find(findCountryCode), false, null));
