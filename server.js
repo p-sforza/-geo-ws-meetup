@@ -77,45 +77,10 @@ wsServer.on('request', function(request) {
 
 //Web Socket Client to meetup API
   var api_url = "ws://stream.meetup.com:80/2/rsvps/";
-  var socket;
-
-  // Create a new connection 
-  function event {
-    open.disabled = true;
-    socket = new WebSocket(api_url, "echo-protocol");
-
-    socket.addEventListener("open", function(event) {
-      close.disabled = false;
-      send.disabled = false;
-      console.log("Connected");
-    });
-
-    // Display messages received from the server
-    socket.addEventListener("message", function(event) {
-      console.log("Server Says: " + event.data);
-      transition(event.data);
-    });
-
-    // Display any errors that occur
-    socket.addEventListener("error", function(event) {
-    console.log("Error: " + event)
-    });
-
-    socket.addEventListener("close", function(event) {
-      open.disabled = false;
-      console.log("Not Connected");
-    });
-  };
-  
-  
-  // Close the connection when the Disconnect button is clicked
-  //close.addEventListener("click", function(event) {
-  //  close.disabled = true;
-  //  send.disabled = true;
-  //  message.textContent = "";
-  //  socket.close();
-  //});
-
-
+  var ws = new WebSocket(api_url, 'echo-protocol');
+  ws.addEventListener("message", function(e) {
+	  var msg = e.data;
+	  console.log(msg);
+  });
 
 
