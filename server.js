@@ -1,6 +1,7 @@
 var WebSocketServer = require('websocket').server;
 var http = require('http');
-var countries = require("countries.json");
+var fs = require("fs");
+var countries = fs.readFileSync("countries.json");
 
 var server = http.createServer(function(request, response) {
     console.log((new Date()) + ' Received request for ' + request.url);
