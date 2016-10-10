@@ -27,36 +27,11 @@ wsServer = new WebSocketServer({
 var countries = fs.readFileSync("countriesMinimal.json");
 var jCountries = JSON.parse(countries);
 console.log(util.inspect(jCountries, false, null));
-
 function findCountryCode(jCountries) { 
     return jCountries.alpha2 === "ZW";
-}
+};
 console.log((new Date()) + ' Countries file loaded');
 console.log((new Date()) + ' Find Res.: ' + util.inspect(jCountries.find(findCountryCode), false, null));
-//console.log((new Date()) + ' Index Res.: ' + jCountries.indexOf("ZW"));
-
-var inventory = [
-                 {
-                	    "name": "Afghanistan",
-                	    "alpha2": "AF",
-                	    "countrycode": "004"
-                	  },
-                	  {
-                	    "name": "Zimbabwe",
-                	    "alpha2": "ZW",
-                	    "countrycode": "716"
-                	  },
-                	  {
-                	    "name": "Zambia",
-                	    "alpha2": "ZM",
-                	    "countrycode": "894"
-                	  }
-                	]
-
-function findCherries(fruit) {
-	return fruit.alpha2 === 'ZW';
-}
-console.log(inventory.find(findCherries));
 
 
 
