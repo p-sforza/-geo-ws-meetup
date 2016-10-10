@@ -1,6 +1,7 @@
 var WebSocketServer = require('websocket').server;
 var http = require('http');
 var fs = require("fs");
+const util = require('util');
 
 var server = http.createServer(function(request, response) {
     console.log((new Date()) + ' Received request for ' + request.url);
@@ -23,6 +24,7 @@ wsServer = new WebSocketServer({
 
 //Handle Countries
 var countries = fs.readFileSync("countriesMinimal.json")
+console.log(util.inspect(countries, false, null))
 function findCountryCode(country) { 
     return country.alpha2 == "ZW";
 }
@@ -51,7 +53,7 @@ var inventory = [
 function findCherries(fruit) {
 	return fruit.alpha2 === 'ZW';
 }
-console.log(inventory.find(findCherries)); // { name: 'cherries', quantity: 5 }
+console.log(inventory.find(findCherries));
 
 
 
