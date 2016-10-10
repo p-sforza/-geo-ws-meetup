@@ -1,4 +1,5 @@
 var WebSocketServer = require('websocket').server;
+var WebSocketClient = require('websocket').client;
 var http = require('http');
 var fs = require("fs");
 const util = require('util');
@@ -77,7 +78,7 @@ wsServer.on('request', function(request) {
 
 //Web Socket Client to meetup API
   var api_url = "ws://stream.meetup.com:80/2/rsvps/";
-  var ws = new WebSocket(api_url, 'echo-protocol');
+  var ws = new WebSocketClient(api_url, 'echo-protocol');
   ws.addEventListener("message", function(e) {
 	  var msg = e.data;
 	  console.log(msg);
