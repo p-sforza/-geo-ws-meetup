@@ -36,7 +36,7 @@ function findCountryCode(jCountries) {
 //console.log((new Date()) + ' Countries file loaded');
 //console.log((new Date()) + ' Find Res.: ' + util.inspect(jCountries.find(findCountry), false, null));
 var currenCountryAlpha2="AF";
-var currenCountryCode=findCountryCode();
+var currenCountryCode=findCountryCode(jCountries);
 //var currenCountry=jCountries.find(findCountry);
 
 console.log((new Date()) + ' Country code for ' + currenCountryAlpha2 + ' is: ' + currenCountryCode);
