@@ -24,15 +24,19 @@ wsServer = new WebSocketServer({
 
 //Handle Countries
 //var countries = fs.readFileSync("countriesMinimal.json")
-var currenCountrytAlpha2="ZW";
+var currenCountryAlpha2="ZW";
 var countries = fs.readFileSync("countriesMinimal.json");
 var jCountries = JSON.parse(countries);
-console.log(util.inspect(jCountries, false, null));
+//console.log(util.inspect(jCountries, false, null));
 function findCountryCode(jCountries) { 
-    return jCountries.alpha2 === currenCountrytAlpha2;
+    return jCountries.alpha2 === currenCountryAlpha2;
 };
-console.log((new Date()) + ' Countries file loaded');
-console.log((new Date()) + ' Find Res.: ' + util.inspect(jCountries.find(findCountryCode), false, null));
+//console.log((new Date()) + ' Countries file loaded');
+//console.log((new Date()) + ' Find Res.: ' + util.inspect(jCountries.find(findCountryCode), false, null));
+var currenCountryAlpha2="ZW";
+var currenCountry=jCountries.find(findCountryCode);
+var currenCountryCode=jCountries.find(findCountryCode).countrycode;
+console.log((new Date()) + ' Country code for ' + currenCountryAlpha2 + ' is: ' + currenCountryCode);
 
 
 
