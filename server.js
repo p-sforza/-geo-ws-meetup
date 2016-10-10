@@ -28,7 +28,7 @@ function findCountryCode(alpha2) {
     return countries.countrycode === 'US';
 }
 console.log(countries.find(findCountryCode));
-console.log(countries.indexOf('US'));
+console.log(countries.indexOf('ZW'));
 
 function originIsAllowed(origin) {
   // put logic here to detect whether the specified origin is allowed.

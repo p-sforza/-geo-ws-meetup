@@ -20,5 +20,16 @@
     "subregion": "Eastern Africa",
     "regioncode": "002",
     "subregioncode": "014"
+  },
+  {
+    "name": "Zambia",
+    "alpha2": "ZM",
+    "alpha3": "ZMB",
+    "countrycode": "894",
+    "iso_3166_2": "ISO 3166-2:ZM",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "regioncode": "002",
+    "subregioncode": "014"
   }
 ]
