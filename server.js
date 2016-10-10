@@ -26,9 +26,9 @@ var countries = fs.readFileSync("countriesMinimal.json");
 console.log((new Date()) + ' Countries file loaded');
 function findCountryCode(alpha2) { 
     return countries.alpha2 == "ZW";
-}
-console.log(countries.find(findCountryCode));
-console.log(countries.indexOf("ZW"));
+};
+console.log((new Date()) + ' Find Res.: ' + countries.find(findCountryCode).toString());
+console.log((new Date()) + ' Index Res.: ' + countries.indexOf("ZW"));
 
 function originIsAllowed(origin) {
   // put logic here to detect whether the specified origin is allowed.
