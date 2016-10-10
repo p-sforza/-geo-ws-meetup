@@ -27,7 +27,7 @@ console.log((new Date()) + ' Countries file loaded');
 function findCountryCode(alpha2) { 
     return countries.alpha2 == "ZW";
 };
-console.log((new Date()) + ' Find Res.: ' + countries.find(findCountryCode).toString());
+console.log((new Date()) + ' Find Res.: ' + countries.find(findCountryCode));
 console.log((new Date()) + ' Index Res.: ' + countries.indexOf("ZW"));
 
 function originIsAllowed(origin) {
