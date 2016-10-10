@@ -79,8 +79,8 @@ wsServer.on('request', function(request) {
   var api_url = "ws://stream.meetup.com:80/2/rsvps/";
   var socket;
 
-  // Create a new connection when the Connect button is clicked
-  open.addEventListener("click", function(event) {
+  // Create a new connection
+  function(event) {
     open.disabled = true;
     socket = new WebSocket(api_url, "echo-protocol");
 
@@ -105,7 +105,7 @@ wsServer.on('request', function(request) {
       open.disabled = false;
       console.log("Not Connected");
     });
-  });
+  };
   
   
   // Close the connection when the Disconnect button is clicked
