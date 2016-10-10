@@ -33,7 +33,7 @@ function findCountryCode(jCountries) {
 };
 //console.log((new Date()) + ' Countries file loaded');
 //console.log((new Date()) + ' Find Res.: ' + util.inspect(jCountries.find(findCountryCode), false, null));
-var currenCountryAlpha2="ZW";
+var currenCountryAlpha2="AF";
 var currenCountry=jCountries.find(findCountryCode);
 var currenCountryCode=jCountries.find(findCountryCode).countrycode;
 console.log((new Date()) + ' Country code for ' + currenCountryAlpha2 + ' is: ' + currenCountryCode);
