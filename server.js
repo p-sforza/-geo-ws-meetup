@@ -47,15 +47,15 @@ function originIsAllowed(origin) {
 //New connection handling
 requestRegister = [ ];
 
-function notify() {
-	//var number = Math.round(Math.random() * 0x64);
-	var number = Math.round(Math.random() * jCountries.length);
+function notifyRand() {
+	var number = Math.round(Math.random() * 0x64);
+	//var number = Math.round(Math.random() * jCountries.length);
 	for(c in requestRegister) 
 		requestRegister[c].send(number.toString());
 	    //console.log((new Date()) + ' Server Send: ' + number.toString());
-	    setTimeout(notify, 1000);
+	    setTimeout(notifyRand, 1000);
 }
-notify();
+notifyRand();
  
 wsServer.on('request', function(request) {
     if (!originIsAllowed(request.origin)) {
@@ -74,3 +74,48 @@ wsServer.on('request', function(request) {
         console.log((new Date()) + ' Peer ' + connection.remoteAddress + ' disconnected.');
     });
 });
+
+//Web Socket Client to meetup API
+  var api_url = "ws://stream.meetup.com:80/2/rsvps/";
+  var socket;
+
+  // Create a new connection when the Connect button is clicked
+  open.addEventListener("click", function(event) {
+    open.disabled = true;
+    socket = new WebSocket(api_url, "echo-protocol");
+
+    socket.addEventListener("open", function(event) {
+      close.disabled = false;
+      send.disabled = false;
+      console.log("Connected");
+    });
+
+    // Display messages received from the server
+    socket.addEventListener("message", function(event) {
+      console.log("Server Says: " + event.data);
+      transition(event.data);
+    });
+
+    // Display any errors that occur
+    socket.addEventListener("error", function(event) {
+    console.log("Error: " + event)
+    });
+
+    socket.addEventListener("close", function(event) {
+      open.disabled = false;
+      console.log("Not Connected");
+    });
+  });
+  
+  
+  // Close the connection when the Disconnect button is clicked
+  //close.addEventListener("click", function(event) {
+  //  close.disabled = true;
+  //  send.disabled = true;
+  //  message.textContent = "";
+  //  socket.close();
+  //});
+
+
+
+
