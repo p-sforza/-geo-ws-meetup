@@ -100,5 +100,5 @@ wsServer.on('request', function(request) {
       
   });
 
-client.connect(api_url, undefined, undefined, undefined, {agent: undefined});
+client.connect(api_url, null, {rejectUnauthorized: false});
 
