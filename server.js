@@ -31,16 +31,27 @@ console.log((new Date()) + ' Find Res.: ' + countries.find(findCountryCode));
 console.log((new Date()) + ' Index Res.: ' + countries.indexOf("ZW"));
 
 var inventory = [
-                 {name: 'apples', quantity: 2},
-                 {name: 'bananas', quantity: 0},
-                 {name: 'cherries', quantity: 5}
-             ];
+                 {
+                	    "name": "Afghanistan",
+                	    "alpha2": "AF",
+                	    "countrycode": "004"
+                	  },
+                	  {
+                	    "name": "Zimbabwe",
+                	    "alpha2": "ZW",
+                	    "countrycode": "716"
+                	  },
+                	  {
+                	    "name": "Zambia",
+                	    "alpha2": "ZM",
+                	    "countrycode": "894"
+                	  }
+                	]
 
-             function findCherries(fruit) { 
-                 return fruit.name === 'cherries';
-             }
-
-             console.log(inventory.find(findCherries)); // { name: 'cherries', quantity: 5 }
+function findCherries(fruit) {
+	return fruit.alpha2 === 'ZW';
+}
+console.log(inventory.find(findCherries)); // { name: 'cherries', quantity: 5 }
 
 
 
