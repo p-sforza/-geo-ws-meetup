@@ -24,10 +24,10 @@ wsServer = new WebSocketServer({
 
 //Handle Countries
 var countries = fs.readFileSync("countries.json");
-var jCountries = JSON.parse(countries);
+var jCountries = JSON.parse(countries)
 function findCountry(jCountries) { 
     return jCountries.alpha2 === currenCountryAlpha2;
-};
+}
 function findCountryCode(jCountries) { 
 	var currenCountryCode=jCountries.find(findCountry).countrycode;
 	return currenCountryCode;
@@ -37,8 +37,6 @@ function findCountryCode(jCountries) {
 //console.log((new Date()) + ' Find Res.: ' + util.inspect(jCountries.find(findCountry), false, null));
 var currenCountryAlpha2="AF";
 var currenCountryCode=findCountryCode(jCountries);
-//var currenCountry=jCountries.find(findCountry);
-
 console.log((new Date()) + ' Country code for ' + currenCountryAlpha2 + ' is: ' + currenCountryCode);
 
 
