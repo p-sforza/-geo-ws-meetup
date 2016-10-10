@@ -39,8 +39,6 @@ var currenCountryAlpha2="AF";
 var currenCountryCode=findCountryCode(jCountries);
 console.log((new Date()) + ' Country code for ' + currenCountryAlpha2 + ' is: ' + currenCountryCode);
 
-
-
 function originIsAllowed(origin) {
   // put logic here to detect whether the specified origin is allowed.
   return true;
@@ -50,7 +48,8 @@ function originIsAllowed(origin) {
 requestRegister = [ ];
 
 function notify() {
-	var number = Math.round(Math.random() * 0x64);
+	//var number = Math.round(Math.random() * 0x64);
+	var number = Math.round(Math.random() * jCountries.length);
 	for(c in requestRegister) 
 		requestRegister[c].send(number.toString());
 	    //console.log((new Date()) + ' Server Send: ' + number.toString());
