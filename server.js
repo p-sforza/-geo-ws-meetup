@@ -103,5 +103,5 @@ wsServer.on('request', function(request) {
 		  rejectUnauthorized: false
 };
 
-  client.connect(api_url, 'chat', null, null, options);
+  client.connect(api_url, 'chat', options);
 
