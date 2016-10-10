@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Afghanistan",
+    "alpha2": "AF",
+    "alpha3": "AFG",
+    "countrycode": "004",
+    "iso_3166_2": "ISO 3166-2:AF",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "regioncode": "142",
+    "subregioncode": "034"
+  },
+  {
+    "name": "Zimbabwe",
+    "alpha2": "ZW",
+    "alpha3": "ZWE",
+    "countrycode": "716",
+    "iso_3166_2": "ISO 3166-2:ZW",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "regioncode": "002",
+    "subregioncode": "014"
+  }
+]

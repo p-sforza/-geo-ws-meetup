@@ -22,7 +22,7 @@ wsServer = new WebSocketServer({
 });
 
 //Handle Countries
-var countries = fs.readFileSync("countries.json");
+var countries = fs.readFileSync("countriesMinimal.json");
 console.log((new Date()) + ' Countries file loaded');
 function findCountryCode(alpha2) { 
     return countries.countrycode === 'US';
